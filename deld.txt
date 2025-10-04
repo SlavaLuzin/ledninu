@@ -3,6 +3,7 @@ fejera - делать
 mork - иметь
 vorter - хотеть
 skarch - искать
+takliger - скачивать
 
 una - я
 tua - ты
@@ -52,3 +53,4 @@ kruda - создавать
 ksheso - космос
 lekonju - вкусный
 administratur - админ / администратор
+filivo - файл

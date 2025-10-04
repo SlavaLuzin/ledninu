@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ledninu — словарь искусственного языка</title>
+  <title>Deldonarir</title>
   <link rel="stylesheet" href="/styles.css" />
   <script type="importmap">
   {
@@ -16,24 +16,36 @@
 <body>
   <header class="site-header">
     <div>
-      <h1>Ledninu — словарь</h1>
-      <p class="subtitle">Небольшой словарь искусственного языка. Данные читаются из deld.txt</p>
+      <h1>LEDNINU!</h1>
+      <p class="subtitle">Englu! Chonwenu! Espanolu! Fransu! Russu! Arabu!</p>
+    </div>
+    <div>
+      <h1>Grammaja</h1>
+      <p>Слово u - слово1 принадлежит слову2</p>
+      <p>Слово быть (sta) употребляется всегда</p>
+      <p>Прошедшее время - слово po перед глаголом</p>
+      <p>Будущее время - слово bu перед глаголом</p>
+      <p>Образование прилагательного из существительного - слово pri перед существительным</p>
+      <p>Образование существительного из глагола - окончание ong у глагола</p>
+      <p>Повелительное наклонение - слово fe перед глаголом</p>
+      <p>Множественное число - слово sen после слова</p>
+      <p>Направление действия (англ. to) - слово ko</p>
+      <p>Отрицательное предложение - слово noja после глагола</p>
+      <p>Прилагательное всегда после определяемого слова (существительного)</p>
+      <p>Вопросительное предложение (на которое можно ответить только да или нет) - слово ma в конце предложения</p>
+    </div>
+    <div>
+      <h1>Deldonarir</h1>
     </div>
     <nav>
-      <a href="/admin.html" class="admin-link">Админ</a>
+      <a href="/admin.html" class="admin-link">Admin?</a>
     </nav>
   </header>
 
   <main class="container">
     <section class="search-panel">
-      <input id="q" placeholder="Поиск слово или значения..." autocomplete="off" />
-      <select id="filter-type">
-        <option value="">Все</option>
-        <option value="n">Существительное</option>
-        <option value="v">Глагол</option>
-        <option value="adj">Прилагательное</option>
-      </select>
-      <button id="download-main" style="margin-left:8px;padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff;cursor:pointer">Скачать deld.txt</button>
+      <input id="q" placeholder="Skarchong ko pojmra" autocomplete="off" />
+      <button id="download-main" style="margin-left:8px;padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff;cursor:pointer">Takliger ko filivo u deldonarir</button>
     </section>
 
     <section id="list" class="list">
@@ -51,9 +63,9 @@
     </template>
   </main>
 
-  <footer class="site-footer">
+<!--   <footer class="site-footer">
     <small>Файл словаря: <code>deld.txt</code>. Для редактирования — <a href="/admin.html">панель администратора</a>.</small>
-  </footer>
+  </footer> -->
 
   <script src="/app.js" type="module"></script>
   <script>
