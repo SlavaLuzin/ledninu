@@ -63,9 +63,9 @@ function render(entries){
 
 function applyFilters(entries){
   const q = qEl.value.trim().toLowerCase();
-  const t = filterEl.value;
+  // const t = filterEl.value;
   return entries.filter(e => {
-    if (t && e.type !== t) return false;
+    // if (t && e.type !== t) return false;
     if (!q) return true;
     return (e.word + ' ' + e.meaning).toLowerCase().includes(q);
   });
