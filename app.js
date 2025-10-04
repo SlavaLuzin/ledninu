@@ -30,7 +30,7 @@ function parse(txt){
     if (!line || line.startsWith('#')) continue;
     // support separator " | " or "\t" or " : "
     const parts = line.split(' - ').map(s => s.trim());
-    entries.push({word: parts[0], type: "", meaning: parts.slice(1).join('/')})
+    entries.push({word: parts[0], meaning: parts.slice(1).join('/')})
     // if (parts.length >= 3) {
     //   entries.push({word: parts[0], type: parts[1], meaning: parts.slice(2).join(' /')});
     // } else {
@@ -51,9 +51,8 @@ function render(entries){
   for (const e of entries) {
     const node = tpl.content.cloneNode(true);
     node.querySelector('.word').textContent = e.word;
-    node.querySelector('.meta').textContent = e.type || '';
     const m = node.querySelector('.meanings');
-    e.meaning.split(';').forEach(s => {
+    e.meaning.split('/').forEach(s => {
       const p = document.createElement('p');
       p.textContent = s.trim();
       m.appendChild(p);
