@@ -83,5 +83,5 @@ async function loadAndShow(){
 }
 
 loadAndShow();
-qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
-filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
+// qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
+// filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
