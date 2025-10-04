@@ -12,7 +12,7 @@ const filterEl = document.getElementById('filter-type');
 const tpl = document.getElementById('item-tpl');
 
 async function fetchDeld() {
-  const res = await fetch('./deld.txt', {cache: 'no-store'});
+  const res = await fetch('deld.txt', {cache: 'no-store'});
   if (!res.ok) throw new Error('Не удалось загрузить deld.txt');
   return res.text();
 }
