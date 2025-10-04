@@ -83,6 +83,6 @@ async function loadAndShow(){
 }
 
 qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
-// filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
+filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
 
 loadAndShow();
