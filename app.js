@@ -12,7 +12,12 @@ const filterEl = document.getElementById('filter-type');
 const tpl = document.getElementById('item-tpl');
 
 async function fetchDeld() {
-  const res = await fetch('deld.txt', {cache: 'no-store'});
+  // prefer the static file (if deployed), otherwise fall back to serverless function
+  try {
+    const r0 = await fetch('/deld.txt', {cache: 'no-store'});
+    if (r0.ok) return r0.text();
+  } catch (e) { /* ignore */ }
+  const res = await fetch('/.netlify/functions/deld', {cache: 'no-store'});
   if (!res.ok) throw new Error('Не удалось загрузить deld.txt');
   return res.text();
 }

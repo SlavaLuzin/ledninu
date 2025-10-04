@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deldonarir Ledninu - Russu</title>
+  <title>Ledninu — словарь искусственного языка</title>
   <link rel="stylesheet" href="/styles.css" />
   <script type="importmap">
   {
@@ -16,17 +16,23 @@
 <body>
   <header class="site-header">
     <div>
-      <h1>Deldonarir Ledninu - Russu</h1>
-      <p class="subtitle">Englu! Chonwenu! Espanolu! Fransu! Russu! Arabu!</p>
+      <h1>Ledninu — словарь</h1>
+      <p class="subtitle">Небольшой словарь искусственного языка. Данные читаются из deld.txt</p>
     </div>
     <nav>
-      <a href="/admin.html" class="admin-link">Admin?</a>
+      <a href="/admin.html" class="admin-link">Админ</a>
     </nav>
   </header>
 
   <main class="container">
     <section class="search-panel">
-      <input id="q" placeholder="Skarchong ko pojmra..." autocomplete="off" />
+      <input id="q" placeholder="Поиск слово или значения..." autocomplete="off" />
+      <select id="filter-type">
+        <option value="">Все</option>
+        <option value="n">Существительное</option>
+        <option value="v">Глагол</option>
+        <option value="adj">Прилагательное</option>
+      </select>
       <button id="download-main" style="margin-left:8px;padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff;cursor:pointer">Скачать deld.txt</button>
     </section>
 
@@ -45,9 +51,9 @@
     </template>
   </main>
 
-  <!-- <footer class="site-footer">
+  <footer class="site-footer">
     <small>Файл словаря: <code>deld.txt</code>. Для редактирования — <a href="/admin.html">панель администратора</a>.</small>
-  </footer> -->
+  </footer>
 
   <script src="/app.js" type="module"></script>
   <script>
@@ -56,8 +62,16 @@
       const btn = document.getElementById('download-main');
       if (!btn) return;
       btn.addEventListener('click', async ()=>{
-        const r = await fetch('deld.txt', {cache:'no-store'});
-        const txt = await r.text();
+        // try static file first (works when deld.txt is deployed as a static asset), fallback to function
+        let txt = '';
+        try {
+          const r0 = await fetch('/deld.txt', {cache:'no-store'});
+          if (r0.ok) txt = await r0.text();
+        } catch (e) {}
+        if (!txt) {
+          const r = await fetch('/.netlify/functions/deld', {cache:'no-store'});
+          txt = await r.text();
+        }
         const blob = new Blob([txt], {type:'text/plain;charset=utf-8'});
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
