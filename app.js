@@ -8,7 +8,7 @@
 
 const listEl = document.getElementById('list');
 const qEl = document.getElementById('q');
-const filterEl = document.getElementById('filter-type');
+// const filterEl = document.getElementById('filter-type');
 const tpl = document.getElementById('item-tpl');
 
 async function fetchDeld() {
@@ -83,5 +83,5 @@ async function loadAndShow(){
 }
 
 qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
-filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
+// filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
 loadAndShow();
