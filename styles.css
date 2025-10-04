@@ -1,0 +1,65 @@
+:root{
+  --bg: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --accent: #0b5fff;
+  --maxw: 880px;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.container{width:100%;max-width:var(--maxw);padding:28px}
+
+.site-header{
+  width:100%;
+  max-width:var(--maxw);
+  padding:20px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.site-header h1{margin:0;font-size:20px}
+.subtitle{margin:4px 0 0;color:var(--muted);font-size:13px}
+.admin-link{font-size:14px;color:var(--accent);text-decoration:none}
+
+.search-panel{display:flex;gap:12px;align-items:center;padding:8px 28px;width:100%;max-width:var(--maxw)}
+.search-panel input, .search-panel select{
+  padding:10px 12px;border:1px solid #e6e6e6;border-radius:8px;font-size:15px;flex:1;
+}
+
+.list{display:grid;grid-template-columns:1fr;gap:12px;padding:8px 0 64px}
+
+.entry{
+  border:1px solid #eee;padding:12px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,0.02);
+}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.word{font-weight:700;font-size:18px}
+.meta{color:var(--muted);font-size:13px}
+.meanings{margin-top:8px;color:#222}
+.meanings p{margin:6px 0;padding-left:6px;border-left:3px solid #f0f0f0;padding-bottom:2px}
+
+/* admin */
+.admin-box{border:1px solid #eee;padding:18px;border-radius:10px;background:#fff}
+.admin-box label{display:block;margin-bottom:6px;font-weight:600}
+.admin-box textarea{width:100%;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;padding:12px;border-radius:8px;border:1px solid #e6e6e6}
+.actions{display:flex;gap:8px;margin-top:12px}
+.actions button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.actions button:nth-child(2){background:#f1f1f1;color:var(--text)}
+.status{margin-top:12px;color:var(--muted);font-size:14px}
+
+.site-footer{width:100%;max-width:var(--maxw);padding:20px 28px;color:var(--muted);font-size:13px;text-align:left}
+code{background:#f7f7f7;padding:2px 6px;border-radius:4px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace}
+

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deldonarir Ledninu - Russu</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "nanoid": "https://cdn.jsdelivr.net/npm/nanoid@4.0.0/index.browser.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>Deldonarir Ledninu - Russu</h1>
+      <p class="subtitle">Englu! Chonwenu! Espanolu! Fransu! Russu! Arabu!</p>
+    </div>
+    <nav>
+      <a href="/admin.html" class="admin-link">Admin?</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="search-panel">
+      <input id="q" placeholder="Skarchong ko pojmra..." autocomplete="off" />
+      <button id="download-main" style="margin-left:8px;padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff;cursor:pointer">Скачать deld.txt</button>
+    </section>
+
+    <section id="list" class="list">
+      <!-- слова будут сюда загружены -->
+    </section>
+
+    <template id="item-tpl">
+      <article class="entry">
+        <div class="head">
+          <div class="word"></div>
+          <div class="meta"></div>
+        </div>
+        <div class="meanings"></div>
+      </article>
+    </template>
+  </main>
+
+  <!-- <footer class="site-footer">
+    <small>Файл словаря: <code>deld.txt</code>. Для редактирования — <a href="/admin.html">панель администратора</a>.</small>
+  </footer> -->
+
+  <script src="/app.js" type="module"></script>
+  <script>
+    // main download button
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const btn = document.getElementById('download-main');
+      if (!btn) return;
+      btn.addEventListener('click', async ()=>{
+        const r = await fetch('./deld.txt', {cache:'no-store'});
+        const txt = await r.text();
+        const blob = new Blob([txt], {type:'text/plain;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'deld.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+</body>
+</html>

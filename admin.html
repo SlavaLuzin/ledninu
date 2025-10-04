@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Редактировать deld.txt</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Админ: редактирование deld.txt</h1>
+    <nav><a href="./index.html" class="admin-link">Назад</a></nav>
+  </header>
+
+  <main class="container">
+    <!-- Password gate: shown first, admin UI stays hidden until unlock -->
+    <section class="admin-box" id="admin-gate">
+      <p class="hint">Для доступа в панель администратора введите пароль.</p>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="admin-pass" type="password" placeholder="Пароль администратора" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6e6e6" />
+        <button id="unlock" class="actions-unlock">Войти</button>
+      </div>
+      <div id="status" class="status" style="margin-top:8px"></div>
+    </section>
+
+    <!-- Full admin UI, hidden until password correct -->
+    <div id="admin-area" hidden>
+      <section class="admin-box" style="margin-top:12px">
+        <p class="hint">Здесь можно обновить файл deld.txt. Обновление происходит через Netlify Function, которая применит изменения в репозитории (требуются переменные окружения, см. README).</p>
+
+        <label for="content">Содержимое deld.txt</label>
+        <textarea id="content" rows="18" spellcheck="false"></textarea>
+
+        <label for="file-upload" style="margin-top:8px;font-weight:600;display:block">Загрузить файл с компьютера</label>
+        <input id="file-upload" type="file" accept=".txt" />
+
+        <div class="actions">
+          <button id="save">Сохранить и запустить обновление</button>
+          <button id="reload">Перезагрузить из deld.txt</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+          <button id="download-file" class="actions-download">Скачать deld.txt</button>
+          <button id="clear-content" style="background:#f5f5f5;color:var(--text)">Очистить</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="admin-box" style="margin-top:14px">
+      <label style="font-weight:700">Добавить слово</label>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="new-word" placeholder="слово" style="padding:8px;border:1px solid #e6e6e6;border-radius:6px" />
+        <input id="new-type" placeholder="тип (n|v|adj)" style="padding:8px;border:1px solid #e6e6e6;border-radius:6px;width:120px" />
+        <input id="new-mean" placeholder="перевод ; примечание" style="padding:8px;border:1px solid #e6e6e6;border-radius:6px;flex:1" />
+        <button id="add-word" style="background:#0b5fff;color:#fff;border-radius:6px;padding:8px 12px">Добавить</button>
+      </div>
+
+      <label style="font-weight:700;margin-top:10px">Удалить слово</label>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="del-word" placeholder="слово для удаления" style="padding:8px;border:1px solid #e6e6e6;border-radius:6px;flex:1" />
+        <button id="del-word-btn" style="background:#e05c5c;color:#fff;border-radius:6px;padding:8px 12px">Удалить</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    // simple admin front-end that calls the same endpoints used by site and function
+    const contentEl = document.getElementById('content');
+    const statusEl = document.getElementById('status');
+    const saveBtn = document.getElementById('save');
+    const reloadBtn = document.getElementById('reload');
+    const uploadEl = document.getElementById('file-upload');
+    const downloadBtn = document.getElementById('download-file');
+    const clearBtn = document.getElementById('clear-content');
+    const adminPassEl = document.getElementById('admin-pass');
+    const unlockBtn = document.getElementById('unlock');
+    const addWordBtn = document.getElementById('add-word');
+    const newWordEl = document.getElementById('new-word');
+    const newTypeEl = document.getElementById('new-type');
+    const newMeanEl = document.getElementById('new-mean');
+    const delWordEl = document.getElementById('del-word');
+    const delWordBtn = document.getElementById('del-word-btn');
+
+    // CLIENT-SIDE ADMIN PASSWORD (change to desired pass). Note: client-side protection is only basic.
+    const ADMIN_PASSWORD = 'ledninu-secret';
+    let unlocked = false;
+    function setLockedState(state){
+      unlocked = state;
+      const controls = [saveBtn, uploadEl, addWordBtn, delWordBtn, downloadBtn, clearBtn];
+      controls.forEach(c=> c.disabled = !state);
+      adminPassEl.disabled = state;
+      unlockBtn.textContent = state ? 'Выйти' : 'Войти';
+    }
+    setLockedState(false);
+
+    async function load() {
+      statusEl.textContent = 'Загрузка...';
+      try {
+        const r = await fetch('deld.txt', {cache: 'no-store'});
+        const txt = await r.text();
+        contentEl.value = txt;
+        statusEl.textContent = 'Готово';
+      } catch (e) {
+        statusEl.textContent = 'Ошибка загрузки deld.txt';
+      }
+    }
+
+    unlockBtn.addEventListener('click', () => {
+      if (!unlocked) {
+        if (adminPassEl.value === ADMIN_PASSWORD) {
+          setLockedState(true);
+          statusEl.textContent = 'Админ: доступ открыт';
+          // load file only after successful unlock
+          load();
+          document.getElementById('admin-area').hidden = false;
+        } else {
+          statusEl.textContent = 'Неверный пароль';
+        }
+      } else {
+        adminPassEl.value = '';
+        setLockedState(false);
+        statusEl.textContent = 'Выход из сессии';
+        document.getElementById('admin-area').hidden = true;
+      }
+    });
+
+    // local file upload -> populate textarea
+    uploadEl.addEventListener('change', async (e) => {
+      const f = e.target.files[0];
+      if (!f) return;
+      const txt = await f.text();
+      contentEl.value = txt;
+      statusEl.textContent = 'Файл загружен в редактор';
+    });
+
+    // download current textarea as deld.txt
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([contentEl.value], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'deld.txt';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    clearBtn.addEventListener('click', ()=> { if(confirm('Очистить поле?')) contentEl.value = ''; });
+
+    saveBtn.addEventListener('click', async () => {
+      if (!unlocked) { statusEl.textContent = 'Требуется пароль'; return; }
+      if (!confirm('Вы уверены, что хотите обновить deld.txt в репозитории?')) return;
+      statusEl.textContent = 'Отправка...';
+      try {
+        const res = await fetch('./netlify/functions/update-deld', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({content: contentEl.value})
+        });
+        const j = await res.json();
+        if (res.ok) {
+          statusEl.textContent = 'Файл обновлён. GitHub SHA: ' + (j.content ? j.content.sha : '');
+        } else {
+          statusEl.textContent = 'Ошибка: ' + (j.message || res.statusText);
+        }
+      } catch (e) {
+        statusEl.textContent = 'Ошибка отправки: ' + e.message;
+      }
+    });
+
+    // add new word to textarea (simple append)
+    addWordBtn.addEventListener('click', () => {
+      if (!unlocked) { statusEl.textContent = 'Требуется пароль'; return; }
+      const w = newWordEl.value.trim();
+      const t = newTypeEl.value.trim();
+      const m = newMeanEl.value.trim();
+      if (!w || !m) { statusEl.textContent = 'Введите слово и перевод'; return; }
+      const line = `${w} | ${t} | ${m}`;
+      // insert at end before trailing comments if present
+      let txt = contentEl.value;
+      // append simple
+      txt = txt.trimEnd() + '\n' + line + '\n';
+      contentEl.value = txt;
+      newWordEl.value = newTypeEl.value = newMeanEl.value = '';
+      statusEl.textContent = 'Слово добавлено в редактор';
+    });
+
+    // delete word by exact match of word at line start
+    delWordBtn.addEventListener('click', () => {
+      if (!unlocked) { statusEl.textContent = 'Требуется пароль'; return; }
+      const target = delWordEl.value.trim();
+      if (!target) { statusEl.textContent = 'Введите слово для удаления'; return; }
+      const lines = contentEl.value.split(/\r?\n/);
+      const out = lines.filter(L => {
+        const t = L.trim();
+        if (!t || t.startsWith('#')) return true;
+        const p = t.split('|').map(s=>s.trim());
+        return p[0] !== target;
+      });
+      contentEl.value = out.join('\n');
+      statusEl.textContent = 'Удаление выполнено (в редакторе)';
+    });
+
+    reloadBtn.addEventListener('click', load);
+
+    // do not auto-load deld.txt; require unlock first
+  </script>
+</body>
+</html>
