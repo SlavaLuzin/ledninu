@@ -49,7 +49,7 @@
     <small>filivo u deldonarir: <code>deld.txt</code>.</small>
   </footer>
 
-  <script src="/app.js" type="module"></script>
+  <script src="./app.js" type="module"></script>
   <script>
     // main download button
     document.addEventListener('DOMContentLoaded', ()=>{
@@ -59,7 +59,7 @@
         // try static file first (works when deld.txt is deployed as a static asset), fallback to function
         let txt = '';
         try {
-          const r0 = await fetch('/deld.txt', {cache:'no-store'});
+          const r0 = await fetch('deld.txt', {cache:'no-store'});
           if (r0.ok) txt = await r0.text();
         } catch (e) {}
         if (!txt) {

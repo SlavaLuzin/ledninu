@@ -14,7 +14,7 @@ const tpl = document.getElementById('item-tpl');
 async function fetchDeld() {
   // prefer the static file (if deployed), otherwise fall back to serverless function
   try {
-    const r0 = await fetch('/deld.txt', {cache: 'no-store'});
+    const r0 = await fetch('deld.txt', {cache: 'no-store'});
     if (r0.ok) return r0.text();
   } catch (e) { /* ignore */ }
   const res = await fetch('/.netlify/functions/deld', {cache: 'no-store'});
