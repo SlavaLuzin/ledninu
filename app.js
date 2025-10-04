@@ -29,13 +29,13 @@ function parse(txt){
     const line = raw.trim();
     if (!line || line.startsWith('#')) continue;
     // support separator " | " or "\t" or " : "
-    const parts = line.split('|').map(s => s.trim());
+    const parts = line.split(' - ').map(s => s.trim());
     if (parts.length >= 3) {
-      entries.push({word: parts[0], type: parts[1], meaning: parts.slice(2).join(' |')});
+      entries.push({word: parts[0], type: parts[1], meaning: parts.slice(2).join(' /')});
     } else {
       // try tabs or semicolon
       const alt = line.split(/\t|;/).map(s=>s.trim());
-      if (alt.length >= 2) entries.push({word: alt[0], type: '', meaning: alt.slice(1).join(';')});
+      if (alt.length >= 2) entries.push({word: alt[0], type: '', meaning: alt.slice(1).join('/')});
     }
   }
   return entries;

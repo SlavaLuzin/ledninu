@@ -1,7 +1,54 @@
-# Формат: слово | тип | перевод ; примечание
-ledni | n | мир
-ga'ru | v | бежать ; неправильный глагол
-sola | adj | светлый
-miri | n | вода
-henn | v | есть
+sta - быть
+fejera - делать
+mork - иметь
+vorter - хотеть
+skarch - искать
 
+una - я
+tua - ты
+onua - он
+olla - она
+itu - оно
+
+kutna - что
+
+mensi - даже
+froge - из
+it - и
+ins - в
+sna - на
+
+vusha - вау / удивление
+
+ledno - язык
+nomhe - название
+deldonarir - словарь
+grammaja - грамматика
+pojmra - слово
+puvirnemo - правительство
+limlo - пример
+personek - человек
+pojna - страна
+hiono - хорошесть
+soloti - выходить
+vanre - ванна
+otsili - отправлять
+porba - играть
+risenje - сообщение
+luvit - любить
+mistiriu - загадка
+kaherto - убийство
+nomblo - число / цифра / номер
+ktipr - ловить
+ptineminto - парковка
+sirnibsu - спасибо
+notika - который (that)
+shakram - говорить
+mot - с / вместе с
+orsen - очень
+inserta - наслаждаться (enjoy)
+krudiono - создание
+kruda - создавать
+ksheso - космос
+lekonju - вкусный
+administratur - админ / администратор
