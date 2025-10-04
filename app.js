@@ -16,10 +16,10 @@ async function fetchDeld() {
   try {
     const r0 = await fetch('deld.txt', {cache: 'no-store'});
     if (r0.ok) return r0.text();
-  } catch (e) { /* ignore */ }
-  const res = await fetch('/.netlify/functions/deld', {cache: 'no-store'});
-  if (!res.ok) throw new Error('Не удалось загрузить deld.txt');
-  return res.text();
+  } catch (e) { return 'Хаха!'; }
+  // const res = await fetch('/.netlify/functions/deld', {cache: 'no-store'});
+  // if (!res.ok) throw new Error('Не удалось загрузить deld.txt');
+  // return res.text();
 }
 
 function parse(txt){
@@ -82,6 +82,6 @@ async function loadAndShow(){
   }
 }
 
+qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
+filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
 loadAndShow();
-// qEl.addEventListener('input', ()=> render(applyFilters(allEntries)));
-// filterEl.addEventListener('change', ()=> render(applyFilters(allEntries)));
