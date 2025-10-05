@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deldonarir</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <title>Deldonarir Ledninu</title>
+  <link rel="icon" type="image/x-icon" href="flageru.jpg" />
+  <link rel="stylesheet" href="./styles.css" />
   <script type="importmap">
   {
     "imports": {
@@ -14,15 +15,88 @@
   </script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="head">
+    <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+      <div>
+        <h1>Ledninu</h1>
+        <p class="subtitle">Englu! Chonwenu! Espanolu! Fransu! Russu! Arabu!</p>
+      </div>
+      <img src="flageru.jpg" alt="Flag" style="height: 80px; width: auto; object-fit: contain; flex-shrink: 0; margin-left: auto; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); border-radius: 12px;">
+    </div>
+  </header>
+  <hr style="width: 100%;" />
+  <section class="overviews" aria-label="Справочные блоки">
+    <div class="card grammar">
+      <h3>Grammaja ins Russu</h3>
+      <p>1. Принадлежность предмета к другому предмету - слово u</p>
+      <p class="hint">nomhe u ledno - название языка</p>
+      <p>2. Слово быть (sta) употребляется всегда (как в английском "I am...")</p>
+      <p class="hint">Una sta personek - Я человек</p>
+      <p>3. Прошедшее время - слово po перед глаголом</p>
+      <p class="hint">Una po metkar - Я поел</p>
+      <p>4. Будущее время - слово bu перед глаголом</p>
+      <p class="hint">Una bu metkar - Я буду есть</p>
+      <p>5. Образование прилагательного из существительного - слово pri перед существительным</p>
+      <p class="hint">hiono (хорошесть) -> pri hiono (хороший)</p>
+      <p>6. Образование существительного из глагола - окончание ong у глагола</p>
+      <p class="hint">metkar (есть) -> metkarong (еда)</p>
+      <p>7. Повелительное наклонение - слово fe перед глаголом</p>
+      <p class="hint">fe fejera itu! - сделай(те) это!</p>
+      <p>8. Множественное число - слово sen после слова</p>
+      <p class="hint">personek sen - люди</p>
+      <p>9. Направление действия (англ. to) - слово ko</p>
+      <p class="hint">Una metkar ko tua - Я ем тебя</p>
+      <p>10. Отрицательное предложение - слово noja после глагола</p>
+      <p class="hint">Una mork noja ko penguo - У меня нет яблока</p>
+      <p>11. Прилагательное всегда после определяемого слова</p>
+      <p class="hint">personek pri hiono - хороший человек</p>
+      <p>12. Вопросительное предложение (на которое можно ответить только да или нет) - слово ma в конце предложения</p>
+      <p class="hint">Tua mork ko penguo ma? - У тебя есть яблоко (да или нет)?</p>
+      <p>13. Обозначние, что следующие слово - числительное - слово so</p>
+      <p class="hint">personek pri s'untre - 13-ый человек</p>
+      <p>14. Возвратный глагол - слово nja после глагола</p>
+      <!-- <p class="hint"></p> -->
+      <p>15. Образование наречия из существительного - слово loz перед существительным </p>
+      <p class="hint">loz hiono - хорошо</p>
+      <p>16. Пассивный залог - слово stanja перед глаголом</p>
+      <!-- <p class="hint">personek sen - люди</p> -->
+      <p>17. Творительный падеж - слово peh</p>
+      <!-- <p class="hint">personek sen - люди</p> -->
+      <p>18. there is / there are (есть) - tes</p>
+      <!-- <p class="hint">personek sen - люди</p> -->
+    </div>
+    <div class="card numerals">
+      <h3>Nomblo sen</h3>
+      <p>zoro - ноль (0)</p>
+      <p>uno - один (1)</p>
+      <p>itohan - два (2)</p>
+      <p>trensta - три (3)</p>
+      <p>fubtje - четыре (4)</p>
+      <p>kinmo - пять (5)</p>
+      <p>sikt - шесть (6)</p>
+      <p>semte - семь (7)</p>
+      <p>ohti - восемь (8)</p>
+      <p>nivat - девять (9)</p>
+      <p>shata / unzo - десять (10)</p>
+      <hr />
+      <p>Для образования числительных больше 10, нужно:</p>
+      <p>1. Ηапример: 895 - это 8, 9 и 5</p>
+      <p>2. 8 - oh, 9 - ni, 5 - ki</p>
+      <p>3. 895 - s'ohniki (+ правило 13 грамматики)</p>
+      <p>=> Нужно взять первые две буквы слова, обозначающее цифру</p>
+      <p>Для образования числительных меньше 0, нужно после числительного добавить слово mi</p>
+      <hr />
+      <p>* Во много раз короче, чем в любом другом языке!</p>
+    </div>
+  </section>
+  <div class="deldo">
     <div>
       <h1>Deldonarir</h1>
-      <p class="subtitle">Englu! Chonwenu! Espanolu! Fransu! Russu! Arabu!</p>
     </div>
-    <nav>
+    <!-- <nav>
       <a href="/admin.html" class="admin-link">Admin?</a>
-    </nav>
-  </header>
+    </nav> -->
+  </div>
 
   <main class="container">
     <section class="search-panel">

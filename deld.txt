@@ -1,9 +1,25 @@
-uno - 1
-itohan - 2
-trensta - 3
-fubtje - 4
-kinmo - 5
-
+una - я
+tua - ты
+onua - он
+olla - она
+itu - оно
+ktoen - кто
+nutel - какой / который (which)
+kotodoshi - когда
+nolaj - где
+konejna - куда
+koment - как (how) / каким образом (how)
+porshi - почему
+porakutna - зачем
+hovnah - сколько
+koment lorgi - как долго
+kome - как (as)
+noktoen - никто
+nonutel - никакой
+nokotodoshi - никогда
+nonolaj - нигде
+nokonejna - никуда
+nokoment - никак
 sta - быть
 fejera - делать
 mork - иметь
@@ -12,24 +28,27 @@ skarch - искать
 takliger - скачивать
 metkar - есть (еду)
 porba - играть
-
-una - я
-tua - ты
-onua - он
-olla - она
-itu - оно
-
+jot - идти
+uspe - использовать
+sotan - спать
+sruler - ругаться / спорить
+vojo - знать
+porit - бежать
+veroju - просыпаться
+sham - да
+not - нет
 kutna - что
-
 mensi - даже
 froge - из
 it - и
 ins - в
 sna - на
+peh - при (by)
 pora - для
-
+uzanu - уже
+pero - отец
+granpero - дедушка
 vusha - вау / удивление
-
 ledno - язык
 nomhe - название
 deldonarir - словарь
@@ -40,6 +59,7 @@ limlo - пример
 personek - человек
 pojna - страна
 hiono - хорошесть
+mavohi - плохость
 soloti - выходить
 vanre - ванна
 otsili - отправлять
@@ -59,12 +79,25 @@ inserta - наслаждаться (enjoy)
 krudiono - создание
 kruda - создавать
 ksheso - космос
-lekonju - вкусный
+lekonju - вкус
 administratur - админ / администратор
 filivo - файл
 penguo - яблоко
-pri noja - новый
+nova - новость
+pri nova - новый
 rures - мышь
 dusher - душ
 konti - скоро
-jot - идти
+flageru - флаг
+tikra - земля (Earth)
+opit - опять / снова
+trahte - работать
+pizza - пицца
+util - полезность
+goslin - лес
+teribl - ужас
+moronan - утро
+leronon - урок
+lorgi - долгота
+poruto - потому что
+fonantala - обои
