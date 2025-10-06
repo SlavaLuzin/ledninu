@@ -45,7 +45,7 @@ function parse(txt){
 function render(entries){
   listEl.innerHTML = '';
   if (!entries.length) {
-    listEl.innerHTML = '<p class="muted">Словарь пуст.</p>';
+    listEl.innerHTML = '<p class="muted">Una pogo noja skarch pojmra u tua :(</p>';
     return;
   }
   for (const e of entries) {

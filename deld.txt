@@ -3,6 +3,9 @@ tua - ты
 onua - он
 olla - она
 itu - оно
+nolika - то (that)
+sho - это (this)
+kutna - что (what)
 ktoen - кто
 nutel - какой / который (which)
 kotodoshi - когда
@@ -22,6 +25,7 @@ nokonejna - никуда
 nokoment - никак
 sta - быть
 fejera - делать
+shakram - говорить
 mork - иметь
 vorter - хотеть
 skarch - искать
@@ -35,11 +39,17 @@ sruler - ругаться / спорить
 vojo - знать
 porit - бежать
 veroju - просыпаться
+soloti - выходить
+inserta - наслаждаться (enjoy)
+trahte - работать
+tegam - учить / изучать
+nuje - нуждаться (need)
+spire - дышать
+pogo - мочь
 sham - да
 not - нет
-kutna - что
 mensi - даже
-froge - из
+froge - из / от
 it - и
 ins - в
 sna - на
@@ -48,9 +58,17 @@ pora - для
 uzanu - уже
 pero - отец
 granpero - дедушка
+timson - время
+nere - год
+partenere - месяц
+vemanja - неделя
+partevemanja - день / сутки
+hoshi - час
+minuten - минута
+sekonden - секунда
 vusha - вау / удивление
 ledno - язык
-nomhe - название
+nomhe - имя / название
 deldonarir - словарь
 grammaja - грамматика
 pojmra - слово
@@ -60,7 +78,6 @@ personek - человек
 pojna - страна
 hiono - хорошесть
 mavohi - плохость
-soloti - выходить
 vanre - ванна
 otsili - отправлять
 risenje - сообщение
@@ -72,10 +89,8 @@ ktipr - ловить
 ptineminto - парковка
 sirnibsu - спасибо
 notika - который (that)
-shakram - говорить
 mot - с / вместе с
 orsen - очень
-inserta - наслаждаться (enjoy)
 krudiono - создание
 kruda - создавать
 ksheso - космос
@@ -91,7 +106,6 @@ konti - скоро
 flageru - флаг
 tikra - земля (Earth)
 opit - опять / снова
-trahte - работать
 pizza - пицца
 util - полезность
 goslin - лес
@@ -101,3 +115,29 @@ leronon - урок
 lorgi - долгота
 poruto - потому что
 fonantala - обои
+ofimal - официальность
+jelu - красивость
+planete - планета
+solnera - солнце
+munera - луна
+simko - небо
+gsuresol - закат
+meklin - яркость
+turosej - бирюзовость
+hirki - воздух
+imposel - невозможность
+musi - но (but)
+tikne - так как
+nationa - раса / нация
+roboten - робот
+kunesgo - жук
+tosu - весь / все (all)
+senift - счастье
+vrine - великость
+tupit - ум / разум
+dorvu - мозг
+vimin - жизнь
+hirse - здесь
+nehirse - там
+meton - место
+parte - часть

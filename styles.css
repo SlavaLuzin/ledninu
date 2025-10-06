@@ -5,6 +5,7 @@
   --muted: #5f6b73;
   --accent: #0b76ff;
   --accent-2: #00a3a3;
+  --accent-3: #008050;
   --glass: rgba(255,255,255,0.6);
   --maxw: 980px;
   font-family: "Cal Sans", "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -19,6 +20,7 @@
 /* slight accent styles for the two cards */
 .card.grammar h3{color:var(--accent)}
 .card.numerals h3{color:var(--accent-2)}
+.card.timson h3{color:var(--accent-3)}
 
 html,body{height:100%}
 body{
