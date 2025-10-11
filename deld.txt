@@ -1,3 +1,4 @@
+# Местоимения
 una - я
 tua - ты
 onua - он
@@ -5,6 +6,13 @@ olla - она
 itu - оно
 nolika - то (that)
 sho - это (this)
+unja - сам / себя (myself) 
+tunja - сам / себя (yourself)
+onja - сам / себя (himself)
+ollanja - сама / себя (herself)
+itunja - сам / себя (itself)
+
+# Вопросительные слова
 kutna - что (what)
 ktoen - кто
 nutel - какой / который (which)
@@ -16,6 +24,7 @@ porshi - почему
 porakutna - зачем
 hovnah - сколько
 koment lorgi - как долго
+
 kome - как (as)
 noktoen - никто
 nonutel - никакой
@@ -23,6 +32,10 @@ nokotodoshi - никогда
 nonolaj - нигде
 nokonejna - никуда
 nokoment - никак
+
+hot - бы (would)
+
+# Глаголы
 sta - быть
 fejera - делать
 shakram - говорить
@@ -46,8 +59,27 @@ tegam - учить / изучать
 nuje - нуждаться (need)
 spire - дышать
 pogo - мочь
+otsili - отправлять
+luvit - любить
+kimen - нравится (like) / любить (like)
+semru - вредить
+togine - придумывать (imagine) / воображать
+risolte - решать (solve)
+suheg - сохранять
+proteg - охранять
+momtari - покупать
+otkrit - открывать
+gererit - закрывать
+posil - приставать / доставать (человека) / выводить (человека из себя)
+prepar - лезть / забираться
+prekoporar - лезть в гору
+hunorit - помогать
+
 sham - да
+konusham - конечно (усиленное да)
 not - нет
+konushoja - конечно нет (усиленное нет)
+
 mensi - даже
 froge - из / от
 it - и
@@ -56,8 +88,14 @@ sna - на
 peh - при (by)
 pora - для
 uzanu - уже
+
+ehirejan - между (between)
+pamtejan - среди (among)
+
 pero - отец
 granpero - дедушка
+
+# Время
 timson - время
 nere - год
 partenere - месяц
@@ -66,7 +104,11 @@ partevemanja - день / сутки
 hoshi - час
 minuten - минута
 sekonden - секунда
+
 vusha - вау / удивление
+vor - ура / радость
+larnet - блин (междометие) / чёрт (междометие)
+
 ledno - язык
 nomhe - имя / название
 deldonarir - словарь
@@ -79,9 +121,7 @@ pojna - страна
 hiono - хорошесть
 mavohi - плохость
 vanre - ванна
-otsili - отправлять
 risenje - сообщение
-luvit - любить
 mistiriu - загадка
 kaherto - убийство
 nomblo - число / цифра / номер
@@ -141,3 +181,26 @@ hirse - здесь
 nehirse - там
 meton - место
 parte - часть
+mrudon - уравнение
+grando - большинство (pri большой) 
+selno - меньшинство (pri маленький)
+statusta - статус
+role - роль
+atorif - автор
+shone - вещь / штука
+rotera - дорога
+shonlin - магазин
+otkrishone - дверь
+partusruler - мат (swearing)
+gus - грубость
+stupki - глупость
+jeperna - блин (еда)
+suritur - еда
+portus - верх
+koportus - вверх
+dostus - низ
+kodostus - вниз
+srit - грязь
+glos - бог
+pojsar - могучесть
+virin - великость
